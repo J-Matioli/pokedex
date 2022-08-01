@@ -1,0 +1,13 @@
+$color-red: #d95550;
+$color-white: #fff;
+
+.c-container{
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include respond(small) { max-width: 520px; }
+    @include respond(medium) { max-width: 720px; }
+    @include respond(large) { max-width: 960px; }
+    @include respond(xlarge) { max-width: 1140px; }    
+    @include respond(xxlarge) { max-width: 1320px; }  
+}

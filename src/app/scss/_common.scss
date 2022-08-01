@@ -1,0 +1,40 @@
+//MEDIA QUERY MANAGER
+
+/*
+    [0 - 575px]: mobile-first
+    576 - 767px: small
+    768 - 991px: medium
+    992 - 1199px: large
+    1200px - 1799px xlarge
+    1800px + : xxlarge
+
+    $breakpoint Argumentos:
+    - small
+    - medium
+    - large
+    - xlarge
+    - xxlarge
+*/
+
+@mixin respond($breakpoint) {
+   
+    @if $breakpoint == small {
+        @media only screen and (min-width: 36em) { @content }; //576px
+    };
+    
+    @if $breakpoint == medium {
+        @media only screen and (min-width: 48em) { @content }; //768px
+    };
+    
+    @if $breakpoint == large {
+        @media only screen and (min-width: 62em) { @content }; //992px
+    };
+
+    @if $breakpoint == xlarge {
+        @media only screen and (min-width: 75em) { @content }; //1200px
+    };
+
+    @if $breakpoint == xxlarge {
+        @media only screen and (min-width: 112.5em) { @content }; //1800px
+    };
+}
