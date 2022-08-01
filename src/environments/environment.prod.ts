@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlApi: "https://api.pokemontcg.io/v2/cards"
 };

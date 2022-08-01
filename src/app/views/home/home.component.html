@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="c-container">
+
+    <div class="search">
+        <input type="text" class="search__input">
+    </div>
+
+    <div class="list">
+        <div class="card" *ngFor="let pokemon of pokemonsList">
+            <img src="{{ pokemon.images['small'] }}" alt="pokemon" class="card__img">
+            <p class="card__text">Nome: {{ pokemon.name }}</p>
+            <p class="card__text">ID do Pokemon: {{ pokemon.id }}</p> 
+            <p class="card__text">Tipo<span class="card__text" *ngIf="pokemon.types.length > 1">s</span>:
+                <span 
+                    class="card__text"
+                    *ngFor="let type of pokemon.types; last as isLast">{{ !isLast ? type + " / " : type }}
+                </span>
+            </p> 
+        </div>
+    </div>
+
+    <button class="more-btn" (click)="getMore()">Exibir mais</button>
+
+</div>

@@ -12,9 +12,9 @@ $color-grey-light-1: #f8f8f8;
 
 $color-grey-dark-1: #212121;
 
-
 .c-container{
     margin: 0 auto;
+    margin-top: 15px;
     padding: 0 15px;
 
     @include respond(small) { max-width: 520px; }
