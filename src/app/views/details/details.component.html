@@ -5,17 +5,28 @@
         
         <div class="details__text-box">
             <h1 class="details__name">{{ pokemon.name }}</h1>
-            <hr>
-            <p><b>ID do pokemon:</b> {{ pokemon.id }}</p>
-            <p><b>Tipos:</b> </p>
+            <p>{{ pokemon.id }}</p>
+            <br>
+            <p><b>Tipo<span *ngIf="pokemon.types.length > 1">s</span>:</b>
+                <span 
+                    *ngFor="let type of pokemon.types; last as isLast"> {{ !isLast ? type + " / " : type }}
+                </span>
+            </p> 
 
-            <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">Ataques: </h2>
-            <div class="details__attacks-box" *ngFor="let attack of pokemon.attacks">
-                <h3>{{ attack.name }}</h3>
-                <p><b>Custo:</b> <span *ngFor="let cost of attack.cost">{{ cost + " " }}</span></p>
-                <p><b>Dano:</b> {{ attack.damage }}</p>
-                <p><b>Descrição:</b> {{ attack.text }}</p>
-            </div>
+            <p><b>Fraqueza<span *ngIf="pokemon.types.length > 1">s</span>:</b>
+                <span 
+                    *ngFor="let weaknesse of pokemon.weaknesses; last as isLast"> {{ weaknesse.type }} {{ weaknesse.value }} 
+                </span>
+            </p> 
+
+        </div>
+
+        <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">Ataques: </h2>
+        <div class="details__attacks-box" *ngFor="let attack of pokemon.attacks">
+            <h3 class="details__attacks-name" >{{ attack.name }}</h3>
+            <p class="details__attacks-dmg">{{ attack.damage }}{{ attack.damage ? '/dano': '' }}</p>
+            <p class="details__attacks-cost"><b>Custo: </b> <span *ngFor="let cost of attack.cost">{{ cost + " " }}</span></p>
+            <p class="details__attacks-description"><b>Descrição:</b> {{ attack.text || ' -- ' }}</p>
         </div>
     </div>
 </div>

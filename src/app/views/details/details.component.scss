@@ -5,19 +5,49 @@
     display: grid;
     grid-template-columns: minmax(min-content, 1fr);    
     grid-gap: 10px;
+    margin-bottom: 20px;
+
+    @include respond(small) {
+        border: 2px solid #525252;
+        padding: 10px;
+        grid-template-columns: minmax(min-content, 1fr) 1fr;
+    }
 
     &__img {
         width: 100%;
+        max-width: 330px;
+        margin: 0 auto;
     }
 
-    &__text-box {   
-        grid-template-columns: minmax(min-content, 1fr);  
-        display: grid;
-        grid-gap: 6px;
+    &__text-box {
+        @include respond(small) {
+            padding: 12px;
+        }
     }
 
     &__name {
         color: $color-grey-dark-1;
+        line-height: 0.8;
+    }
+
+    &__attacks {
         text-align: center;
+        @include respond(small) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__attacks-box {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    }
+
+    &__attacks-dmg {
+        text-align: end;
+    }
+
+    &__attacks-cost,
+    &__attacks-description {
+        grid-column: 1 / -1;
     }
 }
