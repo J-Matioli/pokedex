@@ -11,11 +11,12 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemonsList(pageSize = 250, page = 1): Observable<PokemonResponse> {
+  getAllPokemonsList(pageSize = 250, page = 1): Observable<PokemonResponse> {
     return this.http.get<PokemonResponse>(`${environment.urlApi}?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon`)
-    .pipe(
-      tap(res => console.log(res))
-    )
   }
-
+  
+  getFilterPokemonsList(pageSize = 250, search?: string, page = 1): Observable<PokemonResponse> {
+    return this.http.get<PokemonResponse>(`${environment.urlApi}?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon${search? ' name:' + search : ''}`)
+  }
+  
 }

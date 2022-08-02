@@ -1,8 +1,7 @@
 <div class="c-container">
-
-    <div class="search">
-        <input type="text" class="search__input" placeholder="Pesquisar...">
-    </div>
+    <form class="search" [formGroup]="searchForm">
+        <input type="text" class="search__input" formControlName="search" placeholder="Pesquisar...">
+    </form>
 
     <div class="list">
         <div class="card" *ngFor="let pokemon of pokemonsList">
@@ -18,6 +17,6 @@
         </div>
     </div>
 
-    <button *ngIf="pokemonsList.length > 0" class="more-btn" (click)="getMore()">Exibir mais</button>
+    <button *ngIf="pokemonsList.length > 0 && pokemonsList.length < responseData!.totalCount" class="more-btn" (click)="getMore()">Exibir mais</button>
 
 </div>
