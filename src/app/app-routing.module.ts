@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailsResolver } from './resolvers/details.resolver';
 import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { 
     path: 'detalhes/:id',
-    loadChildren: () => import('./views/details/details.module').then(m => m.DetailsModule) },
+    resolve: {pokemon: DetailsResolver },
+    loadChildren: () => import('./views/details/details.module').then(m => m.DetailsModule)},
   { path: '', component: HomeComponent }
 ];
 
