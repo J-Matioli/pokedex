@@ -11,6 +11,10 @@
     align-content: center;
     grid-template-columns: max-content 1fr;
     justify-content: space-between;
+
+    &__logo {
+        cursor: pointer;
+    }
     
     &__displays {
         display: grid;
