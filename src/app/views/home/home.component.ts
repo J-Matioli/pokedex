@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonResponse } from 'src/app/models/pokemons-response';
 import { PokemonService } from 'src/app/services/pokemon.service';
@@ -13,7 +12,7 @@ export class HomeComponent implements OnInit {
     
   public pokemonsList: Pokemon[] = [];
   private responseData: PokemonResponse | undefined;
-  private maxsize = 100;
+  private maxsize = 40;
 
   constructor(private pokemonService: PokemonService) { }
 

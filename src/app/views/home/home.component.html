@@ -1,7 +1,7 @@
 <div class="c-container">
 
     <div class="search">
-        <input type="text" class="search__input">
+        <input type="text" class="search__input" placeholder="Pesquisar...">
     </div>
 
     <div class="list">
@@ -18,6 +18,6 @@
         </div>
     </div>
 
-    <button class="more-btn" (click)="getMore()">Exibir mais</button>
+    <button *ngIf="pokemonsList.length > 0" class="more-btn" (click)="getMore()">Exibir mais</button>
 
 </div>

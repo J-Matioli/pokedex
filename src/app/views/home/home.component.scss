@@ -1,2 +1,55 @@
 @import "../../scss/main.scss";
 
+.search {
+    &__input {
+        border: none;
+        border-bottom: 2px solid $color-grey-dark-1;
+        width: 50%;
+
+        &:focus,
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.list {
+    margin-top: 15px;
+    width: 100%;
+    grid-gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(234px, 1fr));
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px;
+    border: solid 3px #e5dfbf;
+    border-radius: 2%;
+    box-shadow: 6px 6px 8px 0px $color-grey-light-2;
+
+    &__img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.more-btn {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: block;
+    background-color: #d95550;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 6px 6px 8px 0px #a5a5a5;
+    cursor: pointer;
+}
