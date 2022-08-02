@@ -1,0 +1,21 @@
+<div class="c-container">
+    <div class="details">
+        
+        <img [src]="pokemon.images['large']" alt="" class="details__img">
+        
+        <div class="details__text-box">
+            <h1 class="details__name">{{ pokemon.name }}</h1>
+            <hr>
+            <p><b>ID do pokemon:</b> {{ pokemon.id }}</p>
+            <p><b>Tipos:</b> </p>
+
+            <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">Ataques: </h2>
+            <div class="details__attacks-box" *ngFor="let attack of pokemon.attacks">
+                <h3>{{ attack.name }}</h3>
+                <p><b>Custo:</b> <span *ngFor="let cost of attack.cost">{{ cost + " " }}</span></p>
+                <p><b>Dano:</b> {{ attack.damage }}</p>
+                <p><b>Descrição:</b> {{ attack.text }}</p>
+            </div>
+        </div>
+    </div>
+</div>
