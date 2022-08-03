@@ -5,6 +5,8 @@
 
     <div class="loader" *ngIf="isLoading | async"></div>
 
+    <p *ngIf="!(isLoading | async) && pokemonsList.length === 0"  class="empty-message">...</p>
+
     <div class="list">
         <div class="card" *ngFor="let pokemon of pokemonsList">
             <img src="{{ pokemon.images['small'] }}" alt="pokemon" class="card__img" [routerLink]="'/detalhes/' + pokemon.id">
