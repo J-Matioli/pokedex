@@ -53,4 +53,8 @@
     border-radius: 7px;
     box-shadow: 6px 6px 8px 0px #a5a5a5;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
 }

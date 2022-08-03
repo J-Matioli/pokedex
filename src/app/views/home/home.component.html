@@ -3,6 +3,8 @@
         <input type="text" class="search__input" formControlName="search" placeholder="Pesquisar...">
     </form>
 
+    <div class="loader" *ngIf="isLoading | async"></div>
+
     <div class="list">
         <div class="card" *ngFor="let pokemon of pokemonsList">
             <img src="{{ pokemon.images['small'] }}" alt="pokemon" class="card__img" [routerLink]="'/detalhes/' + pokemon.id">
@@ -17,6 +19,13 @@
         </div>
     </div>
 
-    <button *ngIf="pokemonsList.length > 0 && pokemonsList.length < responseData!.totalCount" class="more-btn" (click)="getMore()">Exibir mais</button>
+    <button 
+        *ngIf="pokemonsList.length > 0 && pokemonsList.length < responseData!.totalCount"
+        class="more-btn"
+        [disabled]="(isLoading | async)"
+        (click)="getMore()">
+            Exibir mais 
+            <div *ngIf="isLoading | async" class="loader loader--btn"></div>
+    </button>
 
 </div>

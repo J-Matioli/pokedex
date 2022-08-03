@@ -3,6 +3,7 @@ $color-red-1: #d3211b;
 
 $color-yellow: #d3ce1b;
 $color-green: #2ed31b;
+$color-blue: #3498db;
 
 
 $color-white: #fff;
@@ -23,4 +24,34 @@ $color-grey-dark-1: #212121;
     @include respond(large) { max-width: 960px; }
     @include respond(xlarge) { max-width: 1140px; }    
     @include respond(xxlarge) { max-width: 1320px; }  
+}
+
+.loader {
+    border: 7px solid $color-grey-light-1;
+    border-radius: 50%;
+    border-top: 7px solid $color-blue;
+    width: 70px;
+    height: 70px;
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+
+    &--btn {
+        border: 3px solid $color-grey-light-1;
+        border-radius: 50%;
+        border-top: 3px solid transparent;
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

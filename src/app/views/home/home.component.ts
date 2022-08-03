@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
-import { debounceTime } from 'rxjs';
+import { debounceTime, delay, Observable, share } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonResponse } from 'src/app/models/pokemons-response';
+import { LoaderService } from 'src/app/services/loader.service';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -12,12 +13,20 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class HomeComponent implements OnInit {
   
+  public isLoading: Observable<boolean> =  this.loader.laoding$.pipe(
+    delay(0),
+    share()
+  );
+
   public searchForm: FormGroup;
   public pokemonsList: Pokemon[] = [];
   public responseData: PokemonResponse | undefined; 
   private maxsize = 20;
 
-  constructor(private pokemonService: PokemonService, private fb: FormBuilder) { }
+  constructor(
+    private pokemonService: PokemonService,
+    private fb: FormBuilder,
+    private loader: LoaderService ) { }
 
   get search(): AbstractControl | null {
     return this.searchForm.get('search')
