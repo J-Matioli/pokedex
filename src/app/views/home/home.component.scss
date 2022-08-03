@@ -5,11 +5,26 @@
         border: none;
         border-bottom: 2px solid $color-grey-dark-1;
         width: 50%;
+        color: $color-white;
+        background-color: transparent;
 
         &:focus,
         &:focus {
             outline: none;
         }
+    }
+
+    ::placeholder {
+        color: $color-white;
+        opacity: 1; /* Firefox */
+    }
+      
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color-white;
+    }
+      
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $color-white;
     }
 }
 
@@ -32,10 +47,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: $color-grey-light-1;
     padding: 10px;
-    border: solid 3px #e5dfbf;
+    border: solid 3px $color-grey-dark-1;
     border-radius: 2%;
-    box-shadow: 6px 6px 8px 0px $color-grey-light-2;
+    box-shadow: 6px 6px 8px 0px $color-red-dark-1;
 
     &__img {
         width: 100%;
@@ -48,7 +64,7 @@
     margin: 0 auto;
     margin-bottom: 20px;
     display: block;
-    background-color: #d95550;
+    background-color: $color-blue;
     color: white;
     font-weight: 600;
     font-size: 18px;
@@ -56,7 +72,7 @@
     text-transform: uppercase;
     border: none;
     border-radius: 7px;
-    box-shadow: 6px 6px 8px 0px #a5a5a5;
+    box-shadow: 6px 6px 8px 0px $color-red-dark-1;
     cursor: pointer;
 
     display: flex;

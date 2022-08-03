@@ -6,10 +6,11 @@
     grid-template-columns: minmax(min-content, 1fr);    
     grid-gap: 10px;
     margin-bottom: 20px;
+    border: 2px solid $color-red-dark-1;
+    background-color: $color-grey-light-2;
+    padding: 10px;
 
     @include respond(small) {
-        border: 2px solid #525252;
-        padding: 10px;
         grid-template-columns: minmax(min-content, 1fr) 1fr;
     }
 
@@ -38,6 +39,9 @@
     }
 
     &__attacks-box {
+        background-color: $color-white;
+        padding: 10px;
+        border-radius: 10px;
         display: grid;
         grid-template-columns: repeat(2, minmax(min-content, 1fr));
     }
