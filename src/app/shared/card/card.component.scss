@@ -1,0 +1,19 @@
+@import "../../scss/main.scss";
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $color-grey-light-1;
+    padding: 10px;
+    border: solid 3px $color-grey-dark-1;
+    border-radius: 2%;
+    box-shadow: 6px 6px 8px 0px $color-red-dark-1;
+
+    &__img {
+        width: 100%;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}

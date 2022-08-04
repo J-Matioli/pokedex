@@ -8,6 +8,7 @@ import { HomeComponent } from './views/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     CoreModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true},

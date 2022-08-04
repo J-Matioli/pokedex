@@ -8,17 +8,7 @@
     <p *ngIf="!(isLoading | async) && pokemonsList.length === 0"  class="empty-message">...</p>
 
     <div class="list">
-        <div class="card" *ngFor="let pokemon of pokemonsList">
-            <img src="{{ pokemon.images['small'] }}" alt="pokemon" class="card__img" [routerLink]="'/detalhes/' + pokemon.id">
-            <p class="card__text">Nome: {{ pokemon.name }}</p>
-            <p class="card__text">ID do Pokemon: {{ pokemon.id }}</p> 
-            <p class="card__text">Tipo<span class="card__text" *ngIf="pokemon.types.length > 1">s</span>:
-                <span 
-                    class="card__text"
-                    *ngFor="let type of pokemon.types; last as isLast">{{ !isLast ? type + " / " : type }}
-                </span>
-            </p> 
-        </div>
+        <app-card [pokemon]="pokemon" class="card" *ngFor="let pokemon of pokemonsList"></app-card>
     </div>
 
     <button 
