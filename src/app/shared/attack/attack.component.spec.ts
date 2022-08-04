@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Attack } from 'src/app/models/pokemon';
 
 import { AttackComponent } from './attack.component';
 
@@ -16,6 +17,7 @@ describe('AttackComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AttackComponent);
     component = fixture.componentInstance;
+    component.attack = {} as Attack;
     fixture.detectChanges();
   });
 
