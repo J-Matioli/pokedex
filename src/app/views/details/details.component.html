@@ -22,11 +22,6 @@
         </div>
 
         <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">Ataques: </h2>
-        <div class="details__attacks-box" *ngFor="let attack of pokemon.attacks">
-            <h3 class="details__attacks-name" >{{ attack.name }}</h3>
-            <p class="details__attacks-dmg">{{ attack.damage }}{{ attack.damage ? '/dano': '' }}</p>
-            <p class="details__attacks-cost"><b>Custo: </b> <span *ngFor="let cost of attack.cost">{{ cost + " " }}</span></p>
-            <p class="details__attacks-description"><b>Descrição:</b> {{ attack.text || ' -- ' }}</p>
-        </div>
+        <app-attack [attack]="attack" *ngFor="let attack of pokemon.attacks"></app-attack>
     </div>
 </div>

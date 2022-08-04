@@ -37,21 +37,4 @@
             grid-column: 1 / -1;
         }
     }
-
-    &__attacks-box {
-        background-color: $color-white;
-        padding: 10px;
-        border-radius: 10px;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(min-content, 1fr));
-    }
-
-    &__attacks-dmg {
-        text-align: end;
-    }
-
-    &__attacks-cost,
-    &__attacks-description {
-        grid-column: 1 / -1;
-    }
 }

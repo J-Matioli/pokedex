@@ -1,0 +1,21 @@
+@import "../../scss/main.scss";
+
+.attack {
+    background-color: $color-white;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+
+        
+    &__dmg {
+        text-align: end;
+    }
+    
+    &__cost,
+    &__description {
+        grid-column: 1 / -1;
+    }
+
+}
