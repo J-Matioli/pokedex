@@ -9,6 +9,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { cardsReducer } from './store/cards/cards.reducers';
+import { loaderReducer } from './store/loaders/loader.reducers';
+import { EffectsModule } from '@ngrx/effects';
 
 
 @NgModule({
@@ -23,7 +27,9 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot({cards: cardsReducer, loaders: loaderReducer}),
+    EffectsModule.forRoot([])
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true},
