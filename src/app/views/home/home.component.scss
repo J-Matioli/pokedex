@@ -1,12 +1,22 @@
 @import "../../scss/main.scss";
 
 .search {
+
+    width: 50%;
+    margin: 30px auto;
+
     &__input {
-        border: none;
-        border-bottom: 2px solid $color-grey-dark-1;
-        width: 50%;
+        border: 4px solid #692d2b;;
+        border-bottom: 4px solid #df6662;
+        width: 100%;
+        height: 2.7rem;
+        color: #fff;
+        background-color: #4099c1;
         color: $color-white;
-        background-color: transparent;
+        font-size: 1rem;
+        font-family: 'Roboto Mono';
+        text-transform: uppercase;
+        padding-left: 1rem;
 
         &:focus,
         &:focus {
