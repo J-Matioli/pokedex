@@ -1,14 +1,14 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { CardsService } from 'src/app/services/cards.service';
 
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let pokemonService: PokemonService
+  let cardsService: CardsService
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -19,7 +19,7 @@ describe('HomeComponent', () => {
       ]
     })
     .compileComponents();
-    pokemonService = TestBed.inject(PokemonService)
+    cardsService = TestBed.inject(CardsService)
   });
 
   beforeEach(() => {

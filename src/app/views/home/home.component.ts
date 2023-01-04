@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
-import { debounceTime, delay, Observable, share } from 'rxjs';
+import { debounceTime, delay, map, Observable, share, tap } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonResponse } from 'src/app/models/pokemons-response';
 import { LoaderService } from 'src/app/services/loader.service';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { CardsService } from 'src/app/services/cards.service';
+import { Store } from '@ngrx/store';
+import { hasCards, selectCardsInfo,  } from 'src/app/store/cards/cards.selector';
+import { loadAllCards, loadParamsCards,  } from 'src/app/store/cards/cards.action';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +15,14 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  public cards$: Observable<Pokemon[]> = this.store.select(selectCardsInfo)
+    .pipe(
+      tap(cardsInfo => this.cardsInfo = cardsInfo),
+      map(cardsInfo => cardsInfo.data)
+    );
+    
+  public hasCards$: Observable<boolean> = this.store.select(hasCards);
   
   public isLoading: Observable<boolean> =  this.loader.laoding$.pipe(
     delay(0),
@@ -20,11 +31,11 @@ export class HomeComponent implements OnInit {
 
   public searchForm: FormGroup;
   public pokemonsList: Pokemon[] = [];
-  public responseData: PokemonResponse | undefined; 
+  public cardsInfo: PokemonResponse | undefined; 
   private maxsize = 20;
 
   constructor(
-    private pokemonService: PokemonService,
+    private store: Store,    
     private fb: FormBuilder,
     private loader: LoaderService ) { }
 
@@ -32,7 +43,9 @@ export class HomeComponent implements OnInit {
     return this.searchForm.get('search')
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+
+    this.store.dispatch(loadAllCards());
 
     this.searchForm = this.fb.group({
       search: [""]
@@ -42,21 +55,14 @@ export class HomeComponent implements OnInit {
       .pipe(
         debounceTime(800),
       ).subscribe(data => {
-        this.pokemonService.getFilterPokemonsList(this.maxsize, data).subscribe((res: PokemonResponse) => this.refreshData(res))
+        this.store.dispatch(loadParamsCards({size: this.maxsize, filter: data, actionType: 'filter'}));  
       })
-
-    this.pokemonService.getAllPokemonsList(this.maxsize).subscribe((res: PokemonResponse) => this.refreshData(res))
   }
 
-  getMore() {
-    const nextPage = this.responseData!.page + 1;
+  getMore() {   
+    const nextPage = this.cardsInfo!.page + 1;
     const searchText =  this.search!.value;
 
-    this.pokemonService.getFilterPokemonsList(this.maxsize, searchText, nextPage).subscribe((res: PokemonResponse) => this.refreshData(res, false))
-  }
-
-  refreshData(res: PokemonResponse, reset = true) {
-    this.pokemonsList = reset ?  res.data as [] : [...this.pokemonsList, ...res.data as []];
-    this.responseData = { ...res };
+    this.store.dispatch(loadParamsCards({size: this.maxsize, filter: searchText, page: nextPage, actionType: 'moreCards'}));
   }
 }

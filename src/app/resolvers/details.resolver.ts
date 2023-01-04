@@ -6,18 +6,18 @@ import {
 import { Observable, of } from 'rxjs';
 import { Pokemon } from '../models/pokemon';
 
-import { PokemonService } from '../services/pokemon.service';
+import { CardsService } from '../services/cards.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DetailsResolver {
 
-  constructor(private pokemon: PokemonService) { }
+  constructor(private card: CardsService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Pokemon> {  
     const id = route.params['id'];
 
-    return this.pokemon.getPokemon(id);
+    return this.card.getPokemon(id);
   }
 }

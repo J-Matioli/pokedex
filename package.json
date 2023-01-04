@@ -20,6 +20,7 @@
     "@angular/router": "~13.2.0",
     "@ngrx/effects": "^13.0.0",
     "@ngrx/store": "^13.0.0",
+    "@ngrx/store-devtools": "^13.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

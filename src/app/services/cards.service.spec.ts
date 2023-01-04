@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { environment } from 'src/environments/environment';
+import { CardsService } from './cards.service';
 
 
-import { PokemonService } from './pokemon.service';
 
-describe('PokemonService', () => {
-  let service: PokemonService;
+
+describe('CardsService', () => {
+  let service: CardsService;
   let http: HttpClient
 
   beforeEach(() => {
@@ -16,7 +17,7 @@ describe('PokemonService', () => {
         HttpClientTestingModule
       ]
     });
-    service = TestBed.inject(PokemonService);
+    service = TestBed.inject(CardsService);
     http = TestBed.inject(HttpClient);
   });
 

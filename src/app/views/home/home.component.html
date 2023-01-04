@@ -5,14 +5,14 @@
 
     <div class="loader" *ngIf="isLoading | async"></div>
 
-    <p *ngIf="!(isLoading | async) && pokemonsList.length === 0"  class="empty-message">...</p>
+    <p *ngIf="!(isLoading | async) && this.cardsInfo?.data?.length === 0"  class="empty-message">...</p>
 
     <div class="list">
-        <app-card [pokemon]="pokemon" class="card" *ngFor="let pokemon of pokemonsList"></app-card>
+        <app-card [pokemon]="pokemon" class="card" *ngFor="let pokemon of cards$ | async"></app-card>
     </div>
 
     <button 
-        *ngIf="pokemonsList.length > 0 && pokemonsList.length < responseData!.totalCount"
+        *ngIf="hasCards$ | async"
         class="more-btn"
         [disabled]="(isLoading | async)"
         (click)="getMore()">

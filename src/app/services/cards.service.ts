@@ -8,16 +8,16 @@ import { PokemonResponse } from '../models/pokemons-response';
 @Injectable({
   providedIn: 'root'
 })
-export class PokemonService {
+export class CardsService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPokemonsList(pageSize = 250, page = 1): Observable<PokemonResponse> {
+  getAllPokemonsList(pageSize = 20, page = 1): Observable<PokemonResponse> {
     return this.http.get<PokemonResponse>(`${environment.urlApi}?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon`)
   }
   
-  getFilterPokemonsList(pageSize = 250, search?: string, page = 1): Observable<PokemonResponse> {
-    return this.http.get<PokemonResponse>(`${environment.urlApi}?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon${search? ' name:' + search : ''}`)
+  getFilterPokemonsList(pageSize = 20, search?: string, page = 1): Observable<PokemonResponse> {
+    return this.http.get<PokemonResponse>(`${environment.urlApi}?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon${search? ' name:' + search + '*': ''}`)
   }
 
   getPokemon(id: string): Observable<Pokemon> {
