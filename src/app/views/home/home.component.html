@@ -3,16 +3,16 @@
         <input type="text" class="search__input" formControlName="search" placeholder="Pesquisar...">
     </form>
 
-    <div class="loader" *ngIf="isLoading | async"></div>
+    <div class="loader" *ngIf="(isLoading | async) || (isParamCardsLoading | async)"></div>
 
     <p *ngIf="!(isLoading | async) && this.cardsInfo?.data?.length === 0"  class="empty-message">...</p>
 
-    <div class="list">
+    <div class="list" *ngIf="!(isLoading | async)">
         <app-card [pokemon]="pokemon" class="card" *ngFor="let pokemon of cards$ | async"></app-card>
     </div>
 
     <button 
-        *ngIf="hasCards$ | async"
+        *ngIf="(hasCards$ | async) && !(isLoading | async)"
         class="more-btn"
         [disabled]="(isLoading | async)"
         (click)="getMore()">

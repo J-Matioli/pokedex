@@ -3,11 +3,11 @@ import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime, delay, map, Observable, share, tap } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonResponse } from 'src/app/models/pokemons-response';
-import { LoaderService } from 'src/app/services/loader.service';
 import { CardsService } from 'src/app/services/cards.service';
 import { Store } from '@ngrx/store';
 import { hasCards, selectCardsInfo,  } from 'src/app/store/cards/cards.selector';
 import { loadAllCards, loadParamsCards,  } from 'src/app/store/cards/cards.action';
+import { selectLoader } from 'src/app/store/loaders/loader.selector';
 
 @Component({
   selector: 'app-home',
@@ -24,10 +24,8 @@ export class HomeComponent implements OnInit {
     
   public hasCards$: Observable<boolean> = this.store.select(hasCards);
   
-  public isLoading: Observable<boolean> =  this.loader.laoding$.pipe(
-    delay(0),
-    share()
-  );
+  public isLoading: Observable<boolean> = this.store.select(selectLoader('cards'))
+  public isParamCardsLoading: Observable<boolean> = this.store.select(selectLoader('paramsCards'))
 
   public searchForm: FormGroup;
   public pokemonsList: Pokemon[] = [];
@@ -36,8 +34,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private store: Store,    
-    private fb: FormBuilder,
-    private loader: LoaderService ) { }
+    private fb: FormBuilder) { }
 
   get search(): AbstractControl | null {
     return this.searchForm.get('search')

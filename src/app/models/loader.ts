@@ -1,1 +1,4 @@
-export interface Loader {}
+export interface Loader {
+    cards: boolean,
+    paramsCards: boolean
+}
