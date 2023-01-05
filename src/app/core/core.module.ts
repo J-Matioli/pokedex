@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
-    ToolbarComponent
+    HeaderComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    ToolbarComponent
+    HeaderComponent
   ]
 })
 export class CoreModule { }
