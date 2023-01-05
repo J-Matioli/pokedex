@@ -1,14 +1,15 @@
 @import "../../scss/main.scss";
 
 .details {
+    font-size: 1.4rem;
     width: 100%;
     display: grid;
     grid-template-columns: minmax(min-content, 1fr);    
-    grid-gap: 10px;
-    margin-bottom: 20px;
-    border: 2px solid $color-red-dark-1;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+    border: .2rem solid $color-red-dark-1;
     background-color: $color-grey-light-2;
-    padding: 10px;
+    padding: 1rem;
 
     @include respond(small) {
         grid-template-columns: minmax(min-content, 1fr) 1fr;
@@ -16,13 +17,13 @@
 
     &__img {
         width: 100%;
-        max-width: 330px;
+        max-width: 33rem;
         margin: 0 auto;
     }
 
     &__text-box {
         @include respond(small) {
-            padding: 12px;
+            padding: 1.2rem;
         }
     }
 

@@ -7,23 +7,24 @@
     flex-direction: column;
     align-items: flex-start;
     background-color: $color-grey-light-1;
-    padding: 10px;
-    border: solid 3px $color-grey-dark-1;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: solid .3rem $color-grey-dark-1;
     border-radius: 2%;
-    box-shadow: 6px 6px 8px 0px $color-red-dark-1;
+    box-shadow: .6rem .6rem .8rem 0 $color-red-dark-1;
     cursor: pointer;
 
     &__img {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
     }
 
     &__type {
-        margin-top: 7px;
-        font-size: 0.8rem;
+        margin-top: .7rem;
+        font-size: 1.3rem;
         color: rgba($color: #fff, $alpha: .9);
         font-weight: 600;
-        padding: 3px 15px;
+        padding: .3rem 1.5rem;
         border-radius: 20%/50%;
 
         &--Colorless { background-color: #919aa2; }

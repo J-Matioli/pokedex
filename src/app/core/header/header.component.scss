@@ -2,29 +2,29 @@
 
 .header {
     background-color: $color-red;
-    border-bottom: 4px solid $color-red-dark-1;
+    border-bottom: .4rem solid $color-red-dark-1;
     height: 10vh;
     color: $color-grey-light-1;
-    font-size: 2rem;
+    font-size: 3.2rem;
     font-weight: 500;
-    padding: .3rem 1rem;
+    padding: .5rem 1.6rem;
     display: grid;
     align-content: center;
-    grid-template-columns: minmax(194px, 295px) 1fr;
+    grid-template-columns: minmax(19.4rem, 29.5rem) 1fr;
     justify-content: space-between;
-    box-shadow: 0px 4px #feead4;
+    box-shadow: 0 .4rem #feead4;
 
     &__logo {
         cursor: pointer;
     }
     
     &__displays {
-        margin-left: 20px;
+        margin-left: 2rem;
         display: grid;
         justify-content: end;
         grid-template-columns: repeat(3, max-content);
         align-content: center;
-        grid-column-gap: .7rem;
+        grid-column-gap: 1.2rem;
     }
 
     &__display {

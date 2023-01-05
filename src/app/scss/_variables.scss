@@ -16,8 +16,8 @@ $color-grey-dark-1: #212121;
 
 .c-container{
     margin: 0 auto;
-    margin-top: 15px;
-    padding: 0 15px;
+    margin-top: 1.5rem;
+    padding: 0 1.5rem;
 
     @include respond(small) { max-width: 520px; }
     @include respond(medium) { max-width: 720px; }
@@ -27,23 +27,14 @@ $color-grey-dark-1: #212121;
 }
 
 .loader {
-    border: 7px solid $color-grey-light-1;
+    border: .7rem solid $color-grey-light-1;
     border-radius: 50%;
-    border-top: 7px solid $color-blue;
-    width: 70px;
-    height: 70px;
+    border-top: .7rem solid $color-blue;
+    width: 7rem;
+    height: 7rem;
     -webkit-animation: spin 2s linear infinite; 
     animation: spin 2s linear infinite;
-    margin: 20px auto;
-
-    &--btn {
-        border: 3px solid $color-grey-light-1;
-        border-radius: 50%;
-        border-top: 3px solid transparent;
-        width: 20px;
-        height: 20px;
-        margin: 0;
-    }
+    margin: 2rem auto;
 }
 
 @-webkit-keyframes spin {

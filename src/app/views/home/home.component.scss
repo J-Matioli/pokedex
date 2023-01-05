@@ -3,13 +3,13 @@
 .search {
 
     width: 50%;
-    margin: 30px auto;
+    margin: 3rem auto;
 
     &__input {
-        border: 4px solid #692d2b;;
-        border-bottom: 4px solid #df6662;
+        border: .4rem solid #692d2b;;
+        border-bottom: .4rem solid #df6662;
         width: 100%;
-        height: 2.7rem;
+        height: 4.3rem;
         color: #fff;
         background-color: #4099c1;
         color: $color-white;
@@ -39,60 +39,60 @@
 }
 
 .empty-message {
-    margin: 20px auto;
+    margin: 3.2rem auto;
     text-align: center;
 }
 
 .list {
-    margin-top: 15px;
+    margin-top: 1.5rem;
     width: 100%;
-    grid-gap: 15px;
+    grid-gap: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(234px, 1fr));
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(23.4rem, 1fr));
+    margin-bottom: 2rem;
 }
 
 .amount {
     width: 100%;
     display: grid;
     justify-content: flex-end;
-    margin: 10px 0;
+    margin: 1rem 0;
 
     &__display {
         background-color: #4099c1;
         color: #fff;
-        font-size: 1rem;
+        font-size: 1.6rem;
         font-family: 'Roboto Mono';
         text-transform: uppercase;
-        border: 4px solid #692d2b;;
-        border-bottom: 4px solid #df6662;
-        padding: 5px 10px;
+        border: .4rem solid #692d2b;;
+        border-bottom: .4rem solid #df6662;
+        padding: .5rem 1rem;
     }
 }
 
 .more-btn {
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     display: block;
     background-color: $color-blue;
     color: white;
     font-weight: 600;
-    font-size: 18px;
-    padding: 10px 30px;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
     text-transform: uppercase;
     border: none;
-    border-top: 4px solid #99d6ff;
-    border-radius: 4px;
-    box-shadow: 0px 11px 0px 0px #1b567e;
+    border-top: .4rem solid #99d6ff;
+    border-radius: .4rem;
+    box-shadow: 0 1.1rem 0 0 #1b567e;
     cursor: pointer;
 
     display: flex;
     align-items: center;
-    column-gap: 13px;
+    column-gap: 1.3rem;
 
     &:hover, &:active {
-        border-top: 6px solid #1b567e;
-        box-shadow: 0px 2px 0px 0px #1b567e;
-        transform: translateY(5px);
+        border-top: .6rem solid #1b567e;
+        box-shadow: 0 .2rem 0 0 #1b567e;
+        transform: translateY(.5rem);
     }
 }
