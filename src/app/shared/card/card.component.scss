@@ -11,10 +11,31 @@
     border: solid 3px $color-grey-dark-1;
     border-radius: 2%;
     box-shadow: 6px 6px 8px 0px $color-red-dark-1;
+    cursor: pointer;
 
     &__img {
         width: 100%;
         margin-bottom: 10px;
-        cursor: pointer;
+    }
+
+    &__type {
+        margin-top: 7px;
+        font-size: 0.8rem;
+        color: rgba($color: #fff, $alpha: .9);
+        font-weight: 600;
+        padding: 3px 15px;
+        border-radius: 20%/50%;
+
+        &--Colorless { background-color: #919aa2; }
+        &--Darkness { background-color: #5a5465; }
+        &--Dragon { background-color: #0b6dc3; }
+        &--Fairy { background-color: #ec8fe6; }
+        &--Fighting { background-color: #ce416b; }
+        &--Fire { background-color: #ff9d55; }
+        &--Grass { background-color: #63bc5a; }
+        &--Lightning { background-color: #f4d23c; }
+        &--Metal { background-color: #5a8ea2; }
+        &--Psychic { background-color: #fa7179; }
+        &--Water { background-color: #5090d6; }
     }
 }

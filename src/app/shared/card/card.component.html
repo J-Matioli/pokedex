@@ -1,11 +1,6 @@
-<div class="card">
-    <img src="{{ pokemon.images['small'] }}" alt="Pokémon card" class="card__img" [routerLink]="'/detalhes/' + pokemon.id">
-    <p class="card__text">Nome: {{ pokemon.name }}</p>
-    <p class="card__text">ID do Pokemon: {{ pokemon.id }}</p> 
-    <p class="card__text">Tipo<span class="card__text" *ngIf="pokemon.types.length > 1">s</span>:
-        <span 
-            class="card__text"
-            *ngFor="let type of pokemon.types; last as isLast">{{ !isLast ? type + " / " : type }}
-        </span>
-    </p> 
+<div class="card" [routerLink]="'/detalhes/' + pokemon.id">
+    <!-- <img src="{{ pokemon.images['small'] }}" alt="Pokémon card" class="card__img"> -->
+    <p><b>Nome:</b> {{ pokemon.name }}</p>
+    <p><b>ID do Pokemon:</b> {{ pokemon.id }}</p> 
+    <p [ngClass]="'card__type card__type--' + pokemon.types ">{{ pokemon.types }} </p> 
 </div>
