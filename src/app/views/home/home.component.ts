@@ -3,7 +3,6 @@ import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime, delay, map, Observable, share, tap } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonResponse } from 'src/app/models/pokemons-response';
-import { CardsService } from 'src/app/services/cards.service';
 import { Store } from '@ngrx/store';
 import { hasCards, selectCardsInfo,  } from 'src/app/store/cards/cards.selector';
 import { loadAllCards, loadParamsCards,  } from 'src/app/store/cards/cards.action';
@@ -27,38 +26,20 @@ export class HomeComponent implements OnInit {
   public isLoading: Observable<boolean> = this.store.select(selectLoader('cards'))
   public isParamCardsLoading: Observable<boolean> = this.store.select(selectLoader('paramsCards'))
 
-  public searchForm: FormGroup;
+  
   public pokemonsList: Pokemon[] = [];
   public cardsInfo: PokemonResponse | undefined; 
   private maxsize = 20;
 
-  constructor(
-    private store: Store,    
-    private fb: FormBuilder) { }
-
-  get search(): AbstractControl | null {
-    return this.searchForm.get('search')
-  }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
-
     this.store.dispatch(loadAllCards());
-
-    this.searchForm = this.fb.group({
-      search: [""]
-    })
-
-    this.search?.valueChanges
-      .pipe(
-        debounceTime(800),
-      ).subscribe(data => {
-        this.store.dispatch(loadParamsCards({size: this.maxsize, filter: data, actionType: 'filter'}));  
-      })
   }
 
   getMore() {   
     const nextPage = this.cardsInfo!.page + 1;
-    const searchText =  this.search!.value;
+    const searchText =  "";
 
     this.store.dispatch(loadParamsCards({size: this.maxsize, filter: searchText, page: nextPage, actionType: 'moreCards'}));
   }

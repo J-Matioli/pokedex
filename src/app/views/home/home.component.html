@@ -1,7 +1,6 @@
 <div class="c-container">
-    <form class="search" [formGroup]="searchForm">
-        <input type="text" class="search__input" formControlName="search" placeholder="Pesquisar...">
-    </form>
+
+    <app-filter></app-filter>
 
     <div class="loader" *ngIf="(isLoading | async) || (isParamCardsLoading | async)"></div>
 
