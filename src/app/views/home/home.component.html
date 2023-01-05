@@ -16,13 +16,6 @@
         </div>
     </div>
 
-    <button 
-        *ngIf="(hasCards$ | async) && !(isLoading | async)"
-        class="more-btn"
-        [disabled]="(isLoading | async)"
-        (click)="getMore()">
-            Exibir mais 
-            <div *ngIf="isLoading | async" class="loader loader--btn"></div>
-    </button>
+   <app-more-cards-btn *ngIf="(hasCards$ | async) && !(isLoading | async)"></app-more-cards-btn>
 
 </div>

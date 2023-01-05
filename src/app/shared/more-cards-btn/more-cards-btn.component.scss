@@ -1,0 +1,37 @@
+@import "../../scss/main.scss";
+
+.more-btn {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    display: block;
+    background-color: $color-blue;
+    color: white;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border: none;
+    border-top: .4rem solid #99d6ff;
+    border-radius: .4rem;
+    box-shadow: 0 1.1rem 0 0 #1b567e;
+
+    display: flex;
+    align-items: center;
+    column-gap: 1.3rem;
+    cursor: pointer; 
+
+    &:hover,
+    &:active,
+    &:disabled,
+    &[disabled] {
+        border-top: .6rem solid #1b567e;
+        box-shadow: 0 .2rem 0 0 #1b567e;
+        background-color: #2a83be;
+        transform: translateY(.5rem);
+    }
+
+    &:disabled,
+    &[disabled] {
+        cursor: auto;
+    }
+}

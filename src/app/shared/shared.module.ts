@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { AttackComponent } from './attack/attack.component';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MoreCardsBtnComponent } from './more-cards-btn/more-cards-btn.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     AttackComponent,
-    FilterComponent
+    FilterComponent,
+    MoreCardsBtnComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   exports: [
     CardComponent,
     AttackComponent,
-    FilterComponent
+    FilterComponent,
+    MoreCardsBtnComponent
   ]
 })
 export class SharedModule { }

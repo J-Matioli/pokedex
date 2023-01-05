@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
   
   public pokemonsList: Pokemon[] = [];
   public cardsInfo: PokemonResponse | undefined; 
-  private maxsize = 20;
 
   constructor(private store: Store) { }
 
@@ -37,10 +36,5 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(loadAllCards());
   }
 
-  getMore() {   
-    const nextPage = this.cardsInfo!.page + 1;
-    const searchText =  "";
 
-    this.store.dispatch(loadParamsCards({size: this.maxsize, filter: searchText, page: nextPage, actionType: 'moreCards'}));
-  }
 }
