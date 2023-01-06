@@ -6,9 +6,7 @@
 
     <p *ngIf="!(isLoading | async) && this.cardsInfo?.data?.length === 0"  class="empty-message">...</p>
 
-    <div class="list" *ngIf="!(isLoading | async)">
-        <app-card [pokemon]="pokemon" class="card" *ngFor="let pokemon of cards$ | async"></app-card>
-    </div>
+    <app-card-list *ngIf="!(isLoading | async)"></app-card-list>
 
     <div *ngIf="!(isLoading | async)" class="amount">
         <div class="amount__display">

@@ -8,6 +8,11 @@ export const selectCardsInfo = createSelector(
     (cardsInfo) => cardsInfo
 )
 
+export const selectCards = createSelector(
+    selectCardsState,
+    (cardsInfo) => cardsInfo.data
+)
+
 export const hasCards = createSelector(
     selectCardsInfo,
     (cards) => cards.data?.length > 0 && cards.data?.length < cards.totalCount    

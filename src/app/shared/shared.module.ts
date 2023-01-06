@@ -6,13 +6,15 @@ import { AttackComponent } from './attack/attack.component';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MoreCardsBtnComponent } from './more-cards-btn/more-cards-btn.component';
+import { CardListComponent } from './card-list/card-list.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     AttackComponent,
     FilterComponent,
-    MoreCardsBtnComponent
+    MoreCardsBtnComponent,
+    CardListComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { MoreCardsBtnComponent } from './more-cards-btn/more-cards-btn.component
     CardComponent,
     AttackComponent,
     FilterComponent,
-    MoreCardsBtnComponent
+    MoreCardsBtnComponent,
+    CardListComponent
   ]
 })
 export class SharedModule { }

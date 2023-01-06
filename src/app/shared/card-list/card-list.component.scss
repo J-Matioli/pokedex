@@ -1,0 +1,10 @@
+@import "../../scss/main.scss";
+
+.list {
+    margin-top: 1.5rem;
+    width: 100%;
+    grid-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23.4rem, 1fr));
+    margin-bottom: 2rem;
+}
