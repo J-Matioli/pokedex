@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
-import { debounceTime, delay, map, Observable, share, tap } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { map, Observable, tap } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonResponse } from 'src/app/models/pokemons-response';
 import { Store } from '@ngrx/store';
 import { hasCards, selectCardsInfo,  } from 'src/app/store/cards/cards.selector';
-import { loadAllCards, loadParamsCards,  } from 'src/app/store/cards/cards.action';
+import { loadAllCards } from 'src/app/store/cards/cards.action';
 import { selectLoader } from 'src/app/store/loaders/loader.selector';
+import { clearFilter } from 'src/app/store/filters/filters.action';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   public cards$: Observable<Pokemon[]> = this.store.select(selectCardsInfo)
     .pipe(
@@ -36,5 +36,8 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(loadAllCards());
   }
 
+  ngOnDestroy(): void {
+    this.store.dispatch(clearFilter());
+  }
 
 }

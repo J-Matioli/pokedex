@@ -15,6 +15,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { CardEffects } from './store/cards/cards.effects';
+import { filterReducer } from './store/filters/filters.reducer';
+import { FilterEffects } from './store/filters/filters.effects';
 
 
 @NgModule({
@@ -30,9 +32,9 @@ import { CardEffects } from './store/cards/cards.effects';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    StoreModule.forRoot({ cards: cardsReducer, loaders: loaderReducer }),
+    StoreModule.forRoot({ cards: cardsReducer, loaders: loaderReducer, filters: filterReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([CardEffects])
+    EffectsModule.forRoot([CardEffects, FilterEffects])
   ],
   providers: [ ],
   bootstrap: [AppComponent]

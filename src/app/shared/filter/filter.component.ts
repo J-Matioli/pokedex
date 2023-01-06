@@ -31,7 +31,7 @@ export class FilterComponent implements OnInit {
       .pipe(
         debounceTime(800),
       ).subscribe(data => {
-        this.store.dispatch(loadParamsCards({size: 20, filter: data, actionType: 'filter'}));  
+        this.store.dispatch(loadParamsCards({size: 20, filter: data, actionType: 'filter', page: 1}));  
       })
   }
 

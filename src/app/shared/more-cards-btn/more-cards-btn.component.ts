@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
-import { PokemonResponse } from 'src/app/models/pokemons-response';
+import { Filter } from 'src/app/models/filter';
 import { loadParamsCards } from 'src/app/store/cards/cards.action';
-import { selectCardsInfo } from 'src/app/store/cards/cards.selector';
+import { selectFilter } from 'src/app/store/filters/filters.selector';
 
 @Component({
   selector: 'app-more-cards-btn',
@@ -12,23 +12,22 @@ import { selectCardsInfo } from 'src/app/store/cards/cards.selector';
 })
 export class MoreCardsBtnComponent implements OnInit {
 
-  public cardInfo$: Observable<PokemonResponse> = this.store.select(selectCardsInfo)
-    .pipe(
-      tap(cardsInfo => this.cardsInfo = cardsInfo)
-    );
+  public filter$: Observable<Filter> = this.store.select(selectFilter)
+  .pipe(
+    tap(filter => this.filter = filter)
+  );
 
-  private cardsInfo: PokemonResponse;
+  private filter: Filter;
 
   constructor(private store: Store) { }
 
   ngOnInit(): void { 
-    this.cardInfo$.subscribe()
+    this.filter$.subscribe()
   }
 
   getMore() {   
-    const nextPage = this.cardsInfo!.page + 1;
-    const searchText =  "";
+    const nextPage = this.filter.page + 1;
 
-    this.store.dispatch(loadParamsCards({size: 20, filter: searchText, page: nextPage, actionType: 'moreCards'}));
+    this.store.dispatch(loadParamsCards({size: this.filter.maxPage, filter: this.filter.searchText, page: nextPage, actionType: 'moreCards'}));
   }
 }
