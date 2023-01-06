@@ -2,7 +2,7 @@ import { createReducer, on } from "@ngrx/store";
 import { Filter } from "src/app/models/filter";
 import { clearFilter, setFilter } from "./filters.action";
 
-export const initFilters: Filter = {} as Filter;
+export const initFilters: Filter = {page: 1} as Filter;
 
 export const filterReducer = createReducer(
     initFilters,
