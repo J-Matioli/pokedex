@@ -14,12 +14,6 @@ import { clearFilter } from 'src/app/store/filters/filters.action';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
-  public cards$: Observable<Pokemon[]> = this.store.select(selectCardsInfo)
-    .pipe(
-      tap(cardsInfo => this.cardsInfo = cardsInfo),
-      map(cardsInfo => cardsInfo.data)
-    );
     
   public hasCards$: Observable<boolean> = this.store.select(hasCards);
   
@@ -27,7 +21,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   public isParamCardsLoading: Observable<boolean> = this.store.select(selectLoader('paramsCards'))
 
   
-  public pokemonsList: Pokemon[] = [];
   public cardsInfo: PokemonResponse | undefined; 
 
   constructor(private store: Store) { }

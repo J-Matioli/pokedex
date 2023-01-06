@@ -4,21 +4,3 @@
     margin: 3.2rem auto;
     text-align: center;
 }
-
-.amount {
-    width: 100%;
-    display: grid;
-    justify-content: flex-end;
-    margin: 1rem 0;
-
-    &__display {
-        background-color: #4099c1;
-        color: #fff;
-        font-size: 1.6rem;
-        font-family: 'Roboto Mono';
-        text-transform: uppercase;
-        border: .4rem solid #692d2b;;
-        border-bottom: .4rem solid #df6662;
-        padding: .5rem 1rem;
-    }
-}

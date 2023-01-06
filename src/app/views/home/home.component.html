@@ -8,11 +8,7 @@
 
     <app-card-list *ngIf="!(isLoading | async)"></app-card-list>
 
-    <div *ngIf="!(isLoading | async)" class="amount">
-        <div class="amount__display">
-            <p>{{ cardsInfo?.data?.length || '--' }} / {{ cardsInfo?.totalCount || '--' }}</p>
-        </div>
-    </div>
+    <app-card-amount *ngIf="!(isLoading | async)"></app-card-amount>
 
    <app-more-cards-btn *ngIf="(hasCards$ | async) && !(isLoading | async)"></app-more-cards-btn>
 
