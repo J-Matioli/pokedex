@@ -1,0 +1,12 @@
+.empty-message {
+    &__title {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__img {
+        max-width: 570px;
+        margin: 0 auto;
+        display: block;
+    }
+}

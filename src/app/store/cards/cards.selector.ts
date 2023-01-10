@@ -15,5 +15,10 @@ export const selectCards = createSelector(
 
 export const hasCards = createSelector(
     selectCardsInfo,
+    (cards) => cards.data?.length > 0
+)
+
+export const hasMoreCards = createSelector(
+    selectCardsInfo,
     (cards) => cards.data?.length > 0 && cards.data?.length < cards.totalCount    
 )

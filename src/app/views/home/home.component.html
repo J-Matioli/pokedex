@@ -4,12 +4,12 @@
 
     <div class="loader" *ngIf="(isLoading | async) || (isParamCardsLoading | async)"></div>
 
-    <p *ngIf="!(isLoading | async) && this.cardsInfo?.data?.length === 0"  class="empty-message">...</p>
+    <app-empty-message *ngIf="!(isLoading | async) && !(hasCards$ | async)"></app-empty-message>
 
     <app-card-list *ngIf="!(isLoading | async)"></app-card-list>
 
     <app-card-amount *ngIf="!(isLoading | async)"></app-card-amount>
 
-   <app-more-cards-btn *ngIf="(hasCards$ | async) && !(isLoading | async)"></app-more-cards-btn>
+   <app-more-cards-btn *ngIf="(hasMoreCards$ | async) && !(isLoading | async)"></app-more-cards-btn>
 
 </div>

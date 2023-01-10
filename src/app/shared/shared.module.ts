@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MoreCardsBtnComponent } from './more-cards-btn/more-cards-btn.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { CardAmountComponent } from './card-amount/card-amount.component';
+import { EmptyMessageComponent } from './empty-message/empty-message.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CardAmountComponent } from './card-amount/card-amount.component';
     FilterComponent,
     MoreCardsBtnComponent,
     CardListComponent,
-    CardAmountComponent
+    CardAmountComponent,
+    EmptyMessageComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { CardAmountComponent } from './card-amount/card-amount.component';
     FilterComponent,
     MoreCardsBtnComponent,
     CardListComponent,
-    CardAmountComponent
+    CardAmountComponent,
+    EmptyMessageComponent
   ]
 })
 export class SharedModule { }
