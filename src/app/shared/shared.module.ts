@@ -9,6 +9,7 @@ import { MoreCardsBtnComponent } from './more-cards-btn/more-cards-btn.component
 import { CardListComponent } from './card-list/card-list.component';
 import { CardAmountComponent } from './card-amount/card-amount.component';
 import { EmptyMessageComponent } from './empty-message/empty-message.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EmptyMessageComponent } from './empty-message/empty-message.component';
     CardListComponent,
     CardAmountComponent,
     EmptyMessageComponent,
+    DisplayComponent,
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { EmptyMessageComponent } from './empty-message/empty-message.component';
     MoreCardsBtnComponent,
     CardListComponent,
     CardAmountComponent,
-    EmptyMessageComponent
+    EmptyMessageComponent,
+    DisplayComponent
   ]
 })
 export class SharedModule { }
