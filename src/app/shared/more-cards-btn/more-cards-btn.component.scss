@@ -20,8 +20,7 @@
     column-gap: 1.3rem;
     cursor: pointer; 
 
-    &:hover,
-    &:active,
+    &:hover,    
     &:disabled,
     &[disabled] {
         border-top: .6rem solid #1b567e;
