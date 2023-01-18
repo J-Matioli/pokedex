@@ -18,7 +18,7 @@ export class FilterComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-  get search(): AbstractControl | null {
+  get filter(): AbstractControl | null {
     return this.searchForm.get('search')
   }
 
@@ -26,13 +26,10 @@ export class FilterComponent implements OnInit {
     this.searchForm = this.fb.group({
       search: [""]
     })
+  }
 
-    this.search?.valueChanges
-      .pipe(
-        debounceTime(800),
-      ).subscribe(data => {
-        this.store.dispatch(loadParamsCards({size: 20, filter: data, actionType: 'filter', page: 1}));  
-      })
+  search() {
+    this.store.dispatch(loadParamsCards({size: 20, filter: this.filter?.value, actionType: 'filter', page: 1}));  
   }
 
 }

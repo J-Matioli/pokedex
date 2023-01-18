@@ -1,4 +1,4 @@
-<form class="search" [formGroup]="searchForm">
+<form class="search" [formGroup]="searchForm" (ngSubmit)="search()">
     <input type="text" class="search__input" formControlName="search" placeholder="Pesquisar...">
     <button class="search__btn" type="submit">
         <img class="search__btn-icon" src="./assets/search-icon.svg" alt="search icon">
