@@ -22,7 +22,7 @@ import { FilterEffects } from './store/filters/filters.effects';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

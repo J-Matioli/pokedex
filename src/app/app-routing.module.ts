@@ -6,6 +6,10 @@ import { HomeComponent } from './views/home/home.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { 
+    path: 'cards/:id',
+    // resolve: {pokemon: DetailsResolver },
+    loadChildren: () => import('./views/filtered-cards/filtered-cards.module').then(m => m.FilteredCardsModule)},
+  { 
     path: 'detalhes/:id',
     resolve: {pokemon: DetailsResolver },
     loadChildren: () => import('./views/details/details.module').then(m => m.DetailsModule)},
