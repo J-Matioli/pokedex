@@ -5,4 +5,29 @@
     min-height: 70vh;
     background-color: rgb(46, 129, 212);
     position: relative;
+    border: 1.4rem solid #24415e;
+    border-bottom: 1.4rem solid #74aee7;
+    border-right: 1.4rem solid #74aee7;    
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 5px;
+        height: 50%;
+        background-color: #feead4;
+        bottom: -60px;
+        left: -60px;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 30%;
+        height: 5px;
+        background-color: #feead4;
+        bottom: -60px;
+        left: -60px;
+    }
 }
