@@ -39,34 +39,39 @@
     ::-ms-input-placeholder { /* Microsoft Edge */
         color: $color-white;
     }
-}
 
-.more-btn {
-    transform: translateY(-.5rem);
-    background-color: $color-blue;
-    color: white;
-    padding: 1rem 3rem;
-    border: none;
-    border-top: .4rem solid #99d6ff;
-    border-radius: .4rem;
-    box-shadow: 0 .9rem 0 0 #1b567e;
 
-    display: flex;
-    align-items: center;
-    column-gap: 1.3rem;
-    cursor: pointer; 
-
-    &:hover,    
-    &:disabled,
-    &[disabled] {
-        border-top: .6rem solid #1b567e;
-        box-shadow: 0 .2rem 0 0 #1b567e;
-        background-color: #2a83be;
-        transform: translateY(.1rem);
+    &__btn {
+        transform: translateY(-.5rem);
+        background-color: $color-blue;
+        color: white;
+        padding: .7rem 3rem;
+        border: none;
+        border-top: .4rem solid #99d6ff;
+        border-radius: .4rem;
+        box-shadow: 0 .9rem 0 0 #1b567e;
+    
+        display: flex;
+        align-items: center;
+        column-gap: 1.3rem;
+        cursor: pointer; 
+    
+        &:hover,    
+        &:disabled,
+        &[disabled] {
+            border-top: .6rem solid #1b567e;
+            box-shadow: 0 .2rem 0 0 #1b567e;
+            background-color: #2a83be;
+            transform: translateY(.1rem);
+        }
+    
+        &:disabled,
+        &[disabled] {
+            cursor: auto;
+        }
     }
 
-    &:disabled,
-    &[disabled] {
-        cursor: auto;
+    &__btn-icon {
+        height: 2rem;
     }
 }
