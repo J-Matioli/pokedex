@@ -1,12 +1,13 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { PokemonService } from '../services/cards.service';
+import { CardsService } from '../services/cards.service';
+
 
 import { DetailsResolver } from './details.resolver';
 
 describe('DetailsResolver', () => {
   let resolver: DetailsResolver;
-  let pokemonService: PokemonService;
+  let cardsService: CardsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,7 +16,7 @@ describe('DetailsResolver', () => {
       ]
     });
     resolver = TestBed.inject(DetailsResolver);
-    pokemonService = TestBed.inject(PokemonService)
+    cardsService = TestBed.inject(CardsService)
   });
 
   it('should be created', () => {
