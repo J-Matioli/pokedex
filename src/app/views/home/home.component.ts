@@ -13,7 +13,7 @@ import { clearFilter } from 'src/app/store/filters/filters.action';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
     
   public hasCards$: Observable<boolean> = this.store.select(hasCards);
   public hasMoreCards$: Observable<boolean> = this.store.select(hasMoreCards);
@@ -27,11 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private store: Store) { }
 
   ngOnInit(): void {
+    this.store.dispatch(clearFilter());
     this.store.dispatch(loadAllCards());
   }
-
-  ngOnDestroy(): void {
-    this.store.dispatch(clearFilter());
-  }
-
 }

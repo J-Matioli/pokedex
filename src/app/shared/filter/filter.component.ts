@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { debounceTime } from 'rxjs';
-import { loadParamsCards } from 'src/app/store/cards/cards.action';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -14,8 +12,8 @@ export class FilterComponent implements OnInit {
   public searchForm: FormGroup;
   
   constructor(
-    private store: Store,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   get filter(): AbstractControl | null {
@@ -29,7 +27,7 @@ export class FilterComponent implements OnInit {
   }
 
   search() {
-    this.store.dispatch(loadParamsCards({size: 20, filter: this.filter?.value, actionType: 'filter', page: 1}));  
+    this.router.navigate(['cards', this.filter?.value])
   }
 
 }
