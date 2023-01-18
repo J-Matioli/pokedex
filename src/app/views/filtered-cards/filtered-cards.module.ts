@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FilteredCardsComponent } from './filtered-cards/filtered-cards.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FilteredCardsComponent } from './filtered-cards.component';
 
 
 const routes: Routes = [
