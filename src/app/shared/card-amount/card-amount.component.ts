@@ -16,7 +16,7 @@ export class CardAmountComponent implements OnInit {
     tap(cardsInfo => this.cardsInfo = cardsInfo)
   );
 
-  public cardsInfo: PokemonResponse;
+  public cardsInfo: PokemonResponse | undefined;
 
   constructor(private store: Store) { }
 
