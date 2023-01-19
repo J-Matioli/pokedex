@@ -3,17 +3,17 @@
     <app-filter></app-filter>
 
     <app-display>
-        <div class="loader" *ngIf="(isLoading | async) || (isParamCardsLoading | async)">
+        <div class="loader" *ngIf="(isParamCardsLoading | async) || (isParamCardsLoading | async)">
             <div class="loader__motion"></div>
             <span class="loader__text">Carregando</span>
         </div>
 
-        <app-card-list *ngIf="!(isLoading | async)"></app-card-list>
-        <!-- <app-empty-message *ngIf="!(isLoading | async) && !(hasCards$ | async)"></app-empty-message> -->
+        <app-card-list *ngIf="!(isParamCardsLoading | async)"></app-card-list>
+        <app-empty-message *ngIf="!(isParamCardsLoading | async) && !(hasCards$ | async)"></app-empty-message>
     </app-display>
 
-    <app-card-amount *ngIf="!(isLoading | async)"></app-card-amount>
+    <app-card-amount *ngIf="!(isParamCardsLoading | async)"></app-card-amount>
 
-   <app-more-cards-btn *ngIf="(hasMoreCards$ | async) && !(isLoading | async)"></app-more-cards-btn>
+   <app-more-cards-btn *ngIf="(hasMoreCards$ | async) && !(isParamCardsLoading | async)"></app-more-cards-btn>
 
 </div>

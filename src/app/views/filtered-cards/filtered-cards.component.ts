@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { hasCards, hasMoreCards } from 'src/app/store/cards/cards.selector';
 import { selectLoader } from 'src/app/store/loaders/loader.selector';
 
@@ -14,7 +14,7 @@ export class FilteredCardsComponent implements OnInit {
   public hasCards$: Observable<boolean> = this.store.select(hasCards);
   public hasMoreCards$: Observable<boolean> = this.store.select(hasMoreCards);
   
-  public isLoading: Observable<boolean> = this.store.select(selectLoader('cards'))
+
   public isParamCardsLoading: Observable<boolean> = this.store.select(selectLoader('paramsCards'))
 
   constructor(private store: Store) { }
