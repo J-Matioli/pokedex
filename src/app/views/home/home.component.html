@@ -9,7 +9,6 @@
         </div>
 
         <app-card-list *ngIf="!(isLoading | async)"></app-card-list>
-        <!-- <app-empty-message *ngIf="!(isLoading | async) && !(hasCards$ | async)"></app-empty-message> -->
     </app-display>
 
     <app-card-amount *ngIf="!(isLoading | async)"></app-card-amount>
