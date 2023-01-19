@@ -10,7 +10,7 @@ html {
 body { 
     margin: 0;
     font-family: 'Red Hat Display', sans-serif;
-    // background-color: $color-red;
+    background-color: $color-red;
 }
 
 *, 
@@ -19,3 +19,22 @@ body {
     box-sizing: inherit;
     margin: 0;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 17px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #692d2b; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $color-red;
+    border-left: 4px solid #feead4;
+    
+  }
+  
+  
