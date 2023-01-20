@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
-import { map, switchMap, tap, withLatestFrom } from "rxjs";
+import { map, switchMap, tap } from "rxjs";
 import { PokemonResponse } from "src/app/models/pokemons-response";
 import { CardsService } from "src/app/services/cards.service";
 import { addStateCards, loadAllCards, loadedCards, loadMoreCards, loadParamsCards, setStateCards } from "./cards.action";
@@ -16,7 +16,6 @@ export class CardEffects {
         private cardsService: CardsService,
         private store: Store) { }
 
-
     loadAllCards = createEffect(
         () => this.actions$
             .pipe(
@@ -30,7 +29,6 @@ export class CardEffects {
                 })
             )
     )
-
 
     loadParamsCards = createEffect(
         () => this.actions$
@@ -52,7 +50,7 @@ export class CardEffects {
                 ofType(loadMoreCards),
                 switchMap(props => {
                     console.log(props);
-                    return this.cardsService.getMorePokemonsList(props.size, props.filter, props.page)
+                    return this.cardsService.getMoreCardList(props.size, props.page, props.filter)
                         .pipe(
                             tap((data: PokemonResponse) => {
                                 this.store.dispatch(addStateCards({ cards: data }))

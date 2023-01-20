@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
-import { Pokemon } from 'src/app/models/pokemon';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PokemonResponse } from 'src/app/models/pokemons-response';
 import { Store } from '@ngrx/store';
-import { hasCards, hasMoreCards, selectCardsInfo,  } from 'src/app/store/cards/cards.selector';
+import { hasCards, hasMoreCards } from 'src/app/store/cards/cards.selector';
 import { loadAllCards } from 'src/app/store/cards/cards.action';
 import { selectLoader } from 'src/app/store/loaders/loader.selector';
 import { clearFilter } from 'src/app/store/filters/filters.action';
