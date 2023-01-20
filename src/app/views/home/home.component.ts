@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   public hasMoreCards$: Observable<boolean> = this.store.select(hasMoreCards);
   
   public isLoading: Observable<boolean> = this.store.select(selectLoader('cards'))
-  public isParamCardsLoading: Observable<boolean> = this.store.select(selectLoader('paramsCards'))
+  public isMoreCardsLoading: Observable<boolean> = this.store.select(selectLoader('moreCardsReq'))
 
   
   public cardsInfo: PokemonResponse | undefined; 

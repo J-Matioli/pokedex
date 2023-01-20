@@ -1,4 +1,5 @@
 export interface Loader {
     cards: boolean,
-    paramsCards: boolean
+    paramsCards: boolean,
+    moreCardsReq: boolean
 }
