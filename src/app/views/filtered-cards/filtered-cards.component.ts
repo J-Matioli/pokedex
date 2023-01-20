@@ -15,7 +15,7 @@ export class FilteredCardsComponent implements OnInit {
   public hasMoreCards$: Observable<boolean> = this.store.select(hasMoreCards);
   
 
-  public isParamCardsLoading: Observable<boolean> = this.store.select(selectLoader('paramsCards'))
+  public isLoading: Observable<boolean> = this.store.select(selectLoader('cards'))
   public isMoreCardsLoading: Observable<boolean> = this.store.select(selectLoader('moreCardsReq'))
 
   constructor(private store: Store) { }

@@ -5,7 +5,7 @@ import { finalize, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon';
 import { PokemonResponse } from '../models/pokemons-response';
-import { setLoaderCardsReq, setLoaderMoreCardsReq, setLoaderParamsCardsReq } from '../store/loaders/loader.action';
+import { setLoaderCardsReq, setLoaderMoreCardsReq } from '../store/loaders/loader.action';
 import { BaseService } from './base.service';
 
 @Injectable({
@@ -15,16 +15,10 @@ export class CardsService extends BaseService {
 
   constructor(http: HttpClient, private store: Store) { super(http) }
 
-  getAllPokemonsList(pageSize = 20, page = 1): Observable<PokemonResponse> {
-    this.store.dispatch(setLoaderCardsReq({cardsReq: true}))
-    return this.getData<PokemonResponse>(`?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon`)
-    .pipe(finalize(() => this.store.dispatch(setLoaderCardsReq({cardsReq: false}))))      
-  }
-  
-  getFilterPokemonsList(pageSize = 20, search?: string, page = 1): Observable<PokemonResponse> {
-    this.store.dispatch(setLoaderParamsCardsReq({paramsCardsReq: true}))
+  getCardList(pageSize = 20, page = 1, search?: string): Observable<PokemonResponse> {
+     this.store.dispatch(setLoaderCardsReq({cardsReq: true}))
     return this.getData<PokemonResponse>(`?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon${search? ' name:' + search + '*': ''}`)
-    .pipe(finalize(() => this.store.dispatch(setLoaderParamsCardsReq({paramsCardsReq: false}))))
+    .pipe(finalize(() => this.store.dispatch(setLoaderCardsReq({cardsReq: false}))))      
   }
 
   getMorePokemonsList(pageSize = 20, search?: string, page = 1): Observable<PokemonResponse> {

@@ -22,7 +22,7 @@ export class CardEffects {
             .pipe(
                 ofType(loadAllCards),
                 switchMap(_ => {
-                    return this.cardsService.getAllPokemonsList()
+                    return this.cardsService.getCardList()
                         .pipe(
                             tap((data: PokemonResponse) => this.store.dispatch(setStateCards({ cards: data }))),
                             map(() => loadedCards())
@@ -37,7 +37,7 @@ export class CardEffects {
             .pipe(
                 ofType(loadParamsCards),
                 switchMap(props => {
-                    return this.cardsService.getFilterPokemonsList(props.size, props.filter, props.page)
+                    return this.cardsService.getCardList(props.size, props.page, props.filter)
                         .pipe(
                             tap((data: PokemonResponse) => this.store.dispatch(setStateCards({ cards: data }))),
                             map(() => loadedCards())
