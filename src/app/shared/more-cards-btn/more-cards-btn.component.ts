@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
 import { Filter } from 'src/app/models/filter';
-import { loadParamsCards } from 'src/app/store/cards/cards.action';
+import { loadMoreCards } from 'src/app/store/cards/cards.action';
 import { selectFilter } from 'src/app/store/filters/filters.selector';
 
 @Component({
@@ -28,6 +28,6 @@ export class MoreCardsBtnComponent implements OnInit {
   getMore() {   
     const nextPage = this.filter.page + 1;
 
-    this.store.dispatch(loadParamsCards({size: this.filter.maxPage, filter: this.filter.searchText, page: nextPage, actionType: 'moreCards'}));
+    this.store.dispatch(loadMoreCards({size: this.filter.maxPage, filter: this.filter.searchText, page: nextPage}));
   }
 }

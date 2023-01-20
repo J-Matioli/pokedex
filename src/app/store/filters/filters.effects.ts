@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { tap } from "rxjs";
-import { loadParamsCards } from "../cards/cards.action";
+import { loadMoreCards, loadParamsCards } from "../cards/cards.action";
 import { setFilter } from "./filters.action";
 
 @Injectable({
@@ -17,7 +17,7 @@ export class FilterEffects {
     setFilters = createEffect(
         () => this.actions$
             .pipe(
-                ofType(loadParamsCards),
+                ofType(...[loadParamsCards, loadMoreCards]),
                 tap(props => {
                      this.store.dispatch(setFilter({ filter: {maxPage: props.size, searchText: props.filter, page: props.page}}))
                 })

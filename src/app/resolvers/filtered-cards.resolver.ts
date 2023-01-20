@@ -25,7 +25,7 @@ export class FilteredCardsResolver implements Resolve<any> {
         select(selectFilter),
         first(),
         tap((filter: Filter) => {
-          this.store.dispatch(loadParamsCards({size: filter?.maxPage, filter: searchText, actionType: 'filter', page: 1}));
+          this.store.dispatch(loadParamsCards({size: filter?.maxPage, filter: searchText, page: 1}));
         })
       )
   }
