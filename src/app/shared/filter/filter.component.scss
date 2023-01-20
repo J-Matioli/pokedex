@@ -2,11 +2,15 @@
 
 .search {
 
-    width: 50%;
+    width: 75%;
     margin: 3rem auto;
     display: flex;
     align-items: center;
     column-gap: 2.5rem;
+
+    @include respond("medium") {
+        width: 50%;
+    }
 
     &__input {
         border: .4rem solid #692d2b;;
