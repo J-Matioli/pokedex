@@ -1,3 +1,8 @@
+//MIXINS
+
+@mixin bgByType($color) { background-color: $color; }
+@mixin borderByType($width, $style, $color) { border: $width $style $color; }
+
 //MEDIA QUERY MANAGER
 
 /*

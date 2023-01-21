@@ -3,15 +3,12 @@
 .header {
     border-bottom: .4rem solid $color-red-dark-1;
     height: 10vh;
-    color: $color-grey-light-1;
-    font-size: 3.2rem;
-    font-weight: 500;
     padding: .5rem 1.6rem;
     display: grid;
     align-content: center;
     grid-template-columns: minmax(19.4rem, 29.5rem) 1fr;
     justify-content: space-between;
-    box-shadow: 0 .4rem #feead4;
+    box-shadow: 0 .4rem $color-yellow;
 
     &__logo {
         cursor: pointer;

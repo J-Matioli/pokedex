@@ -9,10 +9,21 @@
     background-color: $color-grey-light-1;
     padding: 1rem;
     font-size: 1.6rem;
-    border: solid .3rem $color-grey-dark-1;
     border-radius: 2%;
     box-shadow: .6rem .6rem .8rem 0 rgb(61, 61, 61);
     cursor: pointer;
+
+    &--Colorless { @include borderByType(.5rem, solid, $colorless); }
+    &--Darkness { @include borderByType(.5rem, solid, $darkness); }
+    &--Dragon { @include borderByType(.5rem, solid, $dragon); }
+    &--Fairy { @include borderByType(.5rem, solid, $fairy); }
+    &--Fighting { @include borderByType(.5rem, solid, $fighting); }
+    &--Fire { @include borderByType(.5rem, solid, $fire); }
+    &--Grass { @include borderByType(.5rem, solid, $grass); }
+    &--Lightning { @include borderByType(.5rem, solid, $lightning); }
+    &--Metal { @include borderByType(.5rem, solid, $metal); }
+    &--Psychic { @include borderByType(.5rem, solid, $psychic); }
+    &--Water { @include borderByType(.5rem, solid, $water); }
 
     &__img {
         width: 100%;
@@ -27,16 +38,16 @@
         padding: .3rem 1.5rem;
         border-radius: 20%/50%;
 
-        &--Colorless { background-color: #919aa2; }
-        &--Darkness { background-color: #5a5465; }
-        &--Dragon { background-color: #0b6dc3; }
-        &--Fairy { background-color: #ec8fe6; }
-        &--Fighting { background-color: #ce416b; }
-        &--Fire { background-color: #ff9d55; }
-        &--Grass { background-color: #63bc5a; }
-        &--Lightning { background-color: #f4d23c; }
-        &--Metal { background-color: #5a8ea2; }
-        &--Psychic { background-color: #fa7179; }
-        &--Water { background-color: #5090d6; }
+        &--Colorless { @include bgByType($colorless); }
+        &--Darkness { @include bgByType($darkness); }
+        &--Dragon { @include bgByType($dragon); }
+        &--Fairy { @include bgByType($fairy); }
+        &--Fighting { @include bgByType($fighting); }
+        &--Fire { @include bgByType($fire); }
+        &--Grass { @include bgByType($grass); }
+        &--Lightning { @include bgByType($lightning); }
+        &--Metal { @include bgByType($metal); }
+        &--Psychic { @include bgByType($psychic); }
+        &--Water { @include bgByType($water); }
     }
 }

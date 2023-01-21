@@ -10,9 +10,9 @@
     background-size: 35px 35px;
     
     position: relative;
-    border: 1.4rem solid #24415e;
-    border-bottom: 1.4rem solid #74aee7;
-    border-right: 1.4rem solid #74aee7;    
+    border: 1.4rem solid $color-blue-dark-2;
+    border-bottom: 1.4rem solid $color-blue-light;
+    border-right: 1.4rem solid $color-blue-light;    
 
     &::before {
         content: "";
@@ -20,7 +20,7 @@
         position: absolute;
         width: 5px;
         height: 50%;
-        background-color: #feead4;
+        background-color: $color-yellow;
         bottom: -60px;
         left: -60px;
     }
@@ -31,7 +31,7 @@
         position: absolute;
         width: 30%;
         height: 5px;
-        background-color: #feead4;
+        background-color: $color-yellow;
         bottom: -60px;
         left: -60px;
     }

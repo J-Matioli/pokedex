@@ -31,13 +31,13 @@ body {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #692d2b; 
+    background: $color-red-dark-1; 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: $color-red;
-    border-left: 4px solid #feead4;
+    border-left: 4px solid $color-yellow;
     
   }
   

@@ -5,15 +5,15 @@
     margin-bottom: 2rem;
     display: block;
     background-color: $color-blue;
-    color: white;
+    color: $color-white;
     font-weight: 600;
     font-size: 1.8rem;
     padding: 1rem 3rem;
     text-transform: uppercase;
     border: none;
-    border-top: .4rem solid #99d6ff;
+    border-top: .4rem solid $color-blue-light;
     border-radius: .4rem;
-    box-shadow: 0 1.1rem 0 0 #1b567e;
+    box-shadow: 0 1.1rem 0 0 $color-blue-dark-2;
 
     display: flex;
     align-items: center;
@@ -23,9 +23,9 @@
     &:hover,    
     &:disabled,
     &[disabled] {
-        border-top: .6rem solid #1b567e;
-        box-shadow: 0 .2rem 0 0 #1b567e;
-        background-color: #2a83be;
+        border-top: .6rem solid $color-blue-dark-2;
+        box-shadow: 0 .2rem 0 0 $color-blue-dark-2;
+        background-color: $color-blue-dark-1;
         transform: translateY(.5rem);
     }
 
