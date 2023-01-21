@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailsResolver } from './resolvers/details.resolver';
-import { FilteredCardsResolver } from './resolvers/filtered-cards.resolver';
 import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { 
-    path: 'cards/:id',
-    resolve: {filteredCards: FilteredCardsResolver },
+    path: 'cards',
     loadChildren: () => import('./views/filtered-cards/filtered-cards.module').then(m => m.FilteredCardsModule)},
   { 
     path: 'detalhes/:id',
