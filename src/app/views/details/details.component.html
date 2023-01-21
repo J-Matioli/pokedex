@@ -1,27 +1,29 @@
 <div class="c-container">
-    <div class="details">
+    <app-display>
+        <div class="details">
         
-        <img [src]="pokemon.images['large']" alt="Pokémon card" class="details__img">
-        
-        <div class="details__text-box">
-            <h1 class="details__name">{{ pokemon.name }}</h1>
-            <p>{{ pokemon.id }}</p>
-            <br>
-            <p><b>Tipo<span *ngIf="pokemon.types.length > 1">s</span>:</b>
-                <span 
-                    *ngFor="let type of pokemon.types; last as isLast"> {{ !isLast ? type + " / " : type }}
-                </span>
-            </p> 
-
-            <p><b>Fraqueza<span *ngIf="pokemon.types.length > 1">s</span>:</b>
-                <span 
-                    *ngFor="let weaknesse of pokemon.weaknesses; last as isLast"> {{ weaknesse.type }} {{ weaknesse.value }} 
-                </span>
-            </p> 
-
+            <img [src]="pokemon.images['large']" alt="Pokémon card" class="details__img">
+            
+            <div class="details__text-box">
+                <h1 class="details__name">{{ pokemon.name }}</h1>
+                <p>{{ pokemon.id }}</p>
+                <br>
+                <p><b>Tipo<span *ngIf="pokemon.types.length > 1">s</span>:</b>
+                    <span 
+                        *ngFor="let type of pokemon.types; last as isLast"> {{ !isLast ? type + " / " : type }}
+                    </span>
+                </p> 
+    
+                <p><b>Fraqueza<span *ngIf="pokemon.types.length > 1">s</span>:</b>
+                    <span 
+                        *ngFor="let weaknesse of pokemon.weaknesses; last as isLast"> {{ weaknesse.type }} {{ weaknesse.value }} 
+                    </span>
+                </p> 
+    
+            </div>
+    
+            <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">ATAQUES: </h2>
+            <app-attack [attack]="attack" *ngFor="let attack of pokemon.attacks"></app-attack>
         </div>
-
-        <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">Ataques: </h2>
-        <app-attack [attack]="attack" *ngFor="let attack of pokemon.attacks"></app-attack>
-    </div>
+    </app-display>
 </div>
