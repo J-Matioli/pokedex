@@ -1,6 +1,8 @@
 @import "../../scss/main.scss";
 
 .display {
+    display: grid;
+    align-content: center;
     width: 100%;
     min-height: 70vh;
     background-color: $color-blue;
