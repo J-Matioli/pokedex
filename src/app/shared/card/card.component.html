@@ -1,6 +1,6 @@
 <div [ngClass]="'card card--' + pokemon.types " [routerLink]="'/detalhes/' + pokemon.id">
     <img src="{{ pokemon.images['small'] }}" alt="Pokémon card" class="card__img">
     <p><b>Nome:</b> {{ pokemon.name }}</p>
-    <p><b>ID do Pokemon:</b> {{ pokemon.id }}</p> 
+    <p><b>ID do card:</b> {{ pokemon.id }}</p> 
     <p [ngClass]="'card__type card__type--' + pokemon.types ">{{ pokemon.types }} </p> 
 </div>
