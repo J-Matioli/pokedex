@@ -20,10 +20,9 @@
                     </span>
                 </p> 
     
+                <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">ATAQUES: </h2>
+                <app-attack [attack]="attack" *ngFor="let attack of pokemon.attacks"></app-attack>
             </div>
-    
-            <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">ATAQUES: </h2>
-            <app-attack [attack]="attack" *ngFor="let attack of pokemon.attacks"></app-attack>
         </div>
     </app-display>
 </div>

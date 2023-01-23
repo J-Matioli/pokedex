@@ -2,13 +2,16 @@
 
 .details {
     font-size: 1.4rem;
-    width: 100%;
+    color: $color-grey-light-1;
+    width: 95%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: minmax(min-content, 1fr);    
     grid-gap: 1rem;
-    border: .2rem solid $color-grey-dark-1;
-    background-color: $color-grey-light-2;
+    border: .5rem solid rgba($color-blue-dark-2, .9);
+    background-color:  rgba($color-blue-dark-2, .7);
     padding: 1rem;
+    box-shadow: .6rem .6rem .8rem 0 rgba($color-blue-dark-2, .8);
 
     @include respond(small) {
         grid-template-columns: minmax(min-content, 1fr) 1fr;
@@ -22,16 +25,16 @@
 
     &__text-box {
         @include respond(small) {
+            display: flex;
+            flex-direction: column;
             padding: 1.2rem;
         }
     }
 
-    &__name {
-        color: $color-grey-dark-1;
-        line-height: 0.8;
-    }
+    &__name { line-height: 0.8; }
 
     &__attacks {
+        margin-top: auto;
         text-align: center;
         @include respond(small) {
             grid-column: 1 / -1;

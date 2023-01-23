@@ -10,7 +10,7 @@
     padding: 1rem;
     font-size: 1.6rem;
     border-radius: 2%;
-    box-shadow: .6rem .6rem .8rem 0 rgb(61, 61, 61);
+    box-shadow: .6rem .6rem .8rem 0 $color-blue-dark-2;
     cursor: pointer;
 
     &--Colorless { @include borderByType(.5rem, solid, $colorless); }
