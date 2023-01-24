@@ -1,0 +1,36 @@
+@import "../../scss/main.scss";
+
+.footer {
+    margin-top: 8rem;
+    height: 9vh;
+    border-top: 0.5rem solid $color-yellow;
+    box-shadow: 0 -0.4rem $color-red-dark-1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    &__text {
+        color: $color-white;
+        font-family: 'Roboto Mono', sans-serif;
+        font-size: 1.6rem;
+        margin: 0;
+    }
+}
+
+.github-link {
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all .2s;
+    display: inline-block;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-grey-dark-1,.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+}
