@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { finalize, Observable } from 'rxjs';
+import { finalize, map, Observable } from 'rxjs';
 import { Pokemon } from '../models/pokemon';
 import { PokemonResponse } from '../models/pokemons-response';
 import { setLoaderCardsReq, setLoaderMoreCardsReq } from '../store/loaders/loader.action';
@@ -28,8 +28,9 @@ export class CardsService extends BaseService {
     .pipe(finalize(() => this.store.dispatch(setLoaderMoreCardsReq({moreCardsReq: false}))))
   }
 
-  getPokemon(id: string): Observable<Pokemon> {
+  getCard(id: string): Observable<Pokemon> {
     return this.getData<Pokemon>(`/${id}?select=id,name,types,images,attacks,weaknesses`)
+      .pipe(map((card: any) => card.data))
   }
   
 }

@@ -2,26 +2,26 @@
     <app-display>
         <div class="details">
         
-            <img [src]="pokemon.images['large']" alt="Pokémon card" class="details__img">
+            <img [src]="(cardImages$ |async)?.large" alt="Pokémon card" class="details__img">
             
             <div class="details__text-box">
-                <h1 class="details__name">{{ pokemon.name }}</h1>
-                <p>{{ pokemon.id }}</p>
+                <h1 class="details__name">{{ (card$ |async)?.name }}</h1>
+                <p>{{ (card$ |async)?.id }}</p>
                 <br>
-                <p><b>Tipo<span *ngIf="pokemon.types.length > 1">s</span>:</b>
+                <p><b>Tipo<span *ngIf="(cardTypes$ |async)?.length > 1">s</span>:</b>
                     <span 
-                        *ngFor="let type of pokemon.types; last as isLast"> {{ !isLast ? type + " / " : type }}
+                        *ngFor="let type of (cardTypes$ |async); last as isLast"> {{ !isLast ? type + " / " : type }}
                     </span>
                 </p> 
     
-                <p><b>Fraqueza<span *ngIf="pokemon.types.length > 1">s</span>:</b>
+                <p><b>Fraqueza<span *ngIf="(cardTypes$ |async)?.length > 1">s</span>:</b>
                     <span 
-                        *ngFor="let weaknesse of pokemon.weaknesses; last as isLast"> {{ weaknesse.type }} {{ weaknesse.value }} 
+                        *ngFor="let weaknesse of (card$ |async)?.weaknesses; last as isLast"> {{ weaknesse.type }} {{ weaknesse.value }} 
                     </span>
                 </p> 
     
-                <h2 class="details__attacks" *ngIf="pokemon.attacks!.length > 0">ATAQUES: </h2>
-                <app-attack [attack]="attack" *ngFor="let attack of pokemon.attacks"></app-attack>
+                <h2 class="details__attacks" *ngIf="(cardAttacks$ |async)?.length > 0">ATAQUES: </h2>
+                <app-attack [attack]="attack" *ngFor="let attack of (cardAttacks$ |async)"></app-attack>
             </div>
         </div>
     </app-display>
