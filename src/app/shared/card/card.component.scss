@@ -4,9 +4,10 @@
     width: 100%;
     height: 100%;
     display: flex;
+    color: $color-white;
     flex-direction: column;
     align-items: flex-start;
-    background-color: $color-grey-light-1;
+    background-color: rgba($color-blue-dark-3, .8);
     padding: 1rem;
     font-size: 1.6rem;
     border-radius: 2%;
