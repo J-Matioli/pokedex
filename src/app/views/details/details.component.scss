@@ -4,7 +4,7 @@
     font-size: 1.4rem;
     color: $color-grey-light-1;
     width: 95%;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: grid;
     grid-template-columns: minmax(min-content, 1fr);    
     grid-gap: 1rem;
@@ -31,10 +31,14 @@
         }
     }
 
-    &__name { line-height: 0.8; }
+    &__name { 
+        line-height: 0.8; 
+        margin-bottom: 1rem;
+    }
 
     &__attacks {
         margin-top: auto;
+        margin-bottom: 1rem;
         text-align: center;
         @include respond(small) {
             grid-column: 1 / -1;

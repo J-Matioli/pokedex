@@ -14,9 +14,7 @@ export class DetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.pokemon = this.route.snapshot.data['pokemon'].data;
-
-    console.log(this.pokemon);    
+    this.pokemon = this.route.snapshot.data['pokemon'].data;    
   }
 
 }
