@@ -17,6 +17,12 @@ body {
     background-color: $color-red;
 }
 
+a:link,
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 *, 
 *:before,
 *:after {
