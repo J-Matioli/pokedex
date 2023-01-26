@@ -9,7 +9,7 @@ import { addStateCards, loadAllCards, loadedCards, loadMoreCards, loadParamsCard
 @Injectable({
     providedIn: 'root'
 })
-export class CardEffects {
+export class CardsEffects {
     
     constructor(
         private actions$: Actions,
@@ -49,7 +49,6 @@ export class CardEffects {
             .pipe(
                 ofType(loadMoreCards),
                 switchMap(props => {
-                    console.log(props);
                     return this.cardsService.getMoreCardList(props.size, props.page, props.filter)
                         .pipe(
                             tap((data: PokemonResponse) => {

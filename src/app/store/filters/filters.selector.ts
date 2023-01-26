@@ -7,3 +7,8 @@ export const selectFilter = createSelector(
     selectFilterState,
     (filter) => filter
 );
+
+export const selectAutocomplete = createSelector(
+    selectFilterState,
+    (filter) => filter.autoComplete
+);

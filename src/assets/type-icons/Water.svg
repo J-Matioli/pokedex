@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.74 67.74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #090408;
+      }
+
+      .cls-2 {
+        fill: #218bc9;
+      }
+
+      .cls-3 {
+        fill: #2986cb;
+      }
+    </style>
+  </defs>
+  <g id="water">
+    <circle class="cls-3" cx="33.87" cy="33.87" r="33.87"/>
+    <path class="cls-1" d="M53.63,12.47s-14.9,2.71-13.74,14.13c.39,6.97,15.1,14.71,11.61,24.19-2.42,5.61-5.61,11.71-27.42,7.55-13.4-3.33-22.13-23.23-5.98-35.71,13.85-10.16,35.52-10.16,35.52-10.16Z"/>
+    <ellipse class="cls-2" cx="27.28" cy="53.07" rx="3.25" ry="7.52" transform="translate(-32.14 58.45) rotate(-67.96)"/>
+  </g>
+</svg>
