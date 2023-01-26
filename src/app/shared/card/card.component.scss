@@ -35,7 +35,8 @@
     }
 
     &__type {
-        margin-top: .7rem;
+        display: inline-block;
+        margin: .3rem;
         font-size: 1.3rem;
         color: rgba($color: #fff, $alpha: .9);
         font-weight: 600;
