@@ -12,7 +12,7 @@ import { BaseService } from './base.service';
 })
 export class CardsService extends BaseService {
 
-  private urlCardList = (pageSize: number, page: number, searchText?: string) => `?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon${searchText? ' name:' + searchText + '*': ''}`;
+  private urlCardList = (pageSize: number, page: number, searchText?: string) => `?page=${page}&pageSize=${pageSize}&select=id,name,types,images&orderBy=name&q=supertype:Pokémon${searchText? ' name:"' + searchText + '"': ''}`;
 
   constructor(http: HttpClient, private store: Store) { super(http) }
 
