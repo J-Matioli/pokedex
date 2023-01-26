@@ -9,14 +9,14 @@
                 <p>{{ (card$ |async)?.id }}</p>
                 <br>
                 <p><b>Tipo<span *ngIf="(cardTypes$ |async)?.length > 1">s</span>:</b>
-                    <span 
-                        *ngFor="let type of (cardTypes$ |async); last as isLast"> {{ !isLast ? type + " / " : type }}
+                    <span *ngFor="let type of (cardTypes$ |async)">
+                        <img class="type-icon" [src]="'./assets/type-icons/' + type +  '.svg'" alt="Tipo">
                     </span>
                 </p> 
     
                 <p><b>Fraqueza<span *ngIf="(cardTypes$ |async)?.length > 1">s</span>:</b>
-                    <span 
-                        *ngFor="let weaknesse of (card$ |async)?.weaknesses; last as isLast"> {{ weaknesse.type }} {{ weaknesse.value }} 
+                    <span *ngFor="let weaknesse of (card$ |async)?.weaknesses; last as isLast">
+                        <img class="type-icon" [src]="'./assets/type-icons/' + weaknesse.type +  '.svg'" alt="Tipo"> {{ weaknesse.value }}
                     </span>
                 </p> 
     
