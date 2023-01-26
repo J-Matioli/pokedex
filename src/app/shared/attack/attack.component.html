@@ -1,6 +1,6 @@
 <div class="attack">
     <h3 class="attack__name" >{{ attack.name }}</h3>
     <p class="attack__dmg">{{ attack.damage }}{{ attack.damage ? '/dano': '' }}</p>
-    <p class="attack__cost"><b>Custo: </b> <span *ngFor="let cost of attack.cost">{{ cost + " " }}</span></p>
+    <p class="attack__cost"><b>Custo: </b><img class="type-icon" *ngFor="let cost of attack.cost" [src]="'./assets/type-icons/' + cost +  '.svg'" alt="Custo do ataque" srcset=""></p>
     <p class="attack__description"><b>Descrição:</b> {{ attack.text || ' -- ' }}</p>
 </div>

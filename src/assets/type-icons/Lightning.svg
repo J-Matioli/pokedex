@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.74 67.74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #05050d;
+      }
+
+      .cls-2 {
+        fill: #f4e10b;
+      }
+    </style>
+  </defs>
+  <g id="lightning">
+    <circle class="cls-2" cx="33.87" cy="33.87" r="33.87"/>
+    <polygon class="cls-1" points="52.71 20.9 31.03 27.87 38.17 5.68 14 40.26 36.71 33.87 29.23 61.42 52.71 20.9"/>
+  </g>
+</svg>
