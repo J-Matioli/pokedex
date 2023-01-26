@@ -12,6 +12,9 @@
     background-color:  rgba($color-blue-dark-2, .7);
     padding: 1rem;
     box-shadow: .6rem .6rem .8rem 0 rgba($color-blue-dark-2, .8);
+    animation: openBox .5s ease-in;
+
+    * { animation: showData 1s; }
 
     @include respond(small) {
         grid-template-columns: minmax(min-content, 1fr) 1fr;
@@ -43,5 +46,31 @@
         @include respond(small) {
             grid-column: 1 / -1;
         }
+    }
+}
+
+@keyframes openBox {
+    from {
+        width: 2px;
+    }
+    to {
+        width: 95%;
+    }
+}
+
+@keyframes showData {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    50% {
+        height: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        height: auto;
+        opacity: 1;
     }
 }
