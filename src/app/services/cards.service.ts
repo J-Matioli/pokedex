@@ -32,5 +32,9 @@ export class CardsService extends BaseService {
     return this.getData<Pokemon>(`/${id}?select=id,name,types,images,attacks,weaknesses`)
       .pipe(map((card: any) => card.data))
   }
-  
+
+  searchCards(searchText: string): Observable<{name: string}[]> {
+    return this.getData<{name: string}[]>(`?page=1&pageSize=180&select=name&orderBy=name&q=supertype:Pokémon name:${searchText}*`)
+      .pipe(map((card: any) => card.data))
+  }
 }

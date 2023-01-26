@@ -10,6 +10,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { CardAmountComponent } from './card-amount/card-amount.component';
 import { EmptyMessageComponent } from './empty-message/empty-message.component';
 import { DisplayComponent } from './display/display.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DisplayComponent } from './display/display.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutocompleteLibModule
   ],
   exports: [
     CardComponent,

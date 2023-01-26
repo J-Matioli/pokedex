@@ -42,7 +42,7 @@ $water: #5090d6;
     margin-top: 1.5rem;
     padding: 0 1.5rem;
 
-    @include respond(small) { max-width: 520px; }
+    @include respond(small) { max-width: 524px; }
     @include respond(medium) { max-width: 720px; }
     @include respond(large) { max-width: 960px; }
     @include respond(xlarge) { max-width: 1140px; }    

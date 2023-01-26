@@ -1,5 +1,22 @@
-<form class="search" [formGroup]="searchForm" (ngSubmit)="search()">
-    <input type="text" class="search__input" formControlName="search" placeholder="Pesquisar...">
+<form class="search" autocomplete="off" [formGroup]="searchForm" (ngSubmit)="search()">
+        
+    <ng-autocomplete
+        [data]="pokemons"
+        [searchKeyword]="'name'"
+        formControlName="search"
+        placeholder="Pesquisar..."        
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate">                                 
+    </ng-autocomplete>
+    
+    <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item"></a>
+    </ng-template>
+    
+    <ng-template #notFoundTemplate let-nada>
+    <div>...</div>
+    </ng-template>
+
     <button class="search__btn" type="submit">
         <img class="search__btn-icon" src="./assets/search-icon.svg" alt="search icon">
     </button>
