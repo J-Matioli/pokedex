@@ -18,7 +18,7 @@ export class FilteredCardsResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
 
-    const searchText = route.params['id'];
+    const searchText = encodeURIComponent(route.params['id']);
 
     return this.store
       .pipe(
